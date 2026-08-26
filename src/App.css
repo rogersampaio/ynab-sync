@@ -1,0 +1,268 @@
+.app {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: left;
+}
+
+.app-header {
+  margin-bottom: 2rem;
+}
+
+.app-header h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.75rem;
+}
+
+.app-header p {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* File upload */
+.file-upload h2,
+.sync-to-ynab h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.file-upload-hint,
+.sync-hint,
+.sync-desc {
+  margin: 0 0 0.75rem;
+  font-size: 0.875rem;
+  color: var(--text);
+}
+
+.dropzone {
+  position: relative;
+  padding: 1.5rem;
+  border: 2px dashed var(--border);
+  border-radius: 8px;
+  background: var(--code-bg);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.dropzone:hover {
+  border-color: var(--accent-border);
+  background: var(--accent-bg);
+}
+
+.dropzone-input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.dropzone-text {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.dropzone-file {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.dropzone-clear {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid var(--accent-border);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dropzone-clear:hover {
+  background: var(--accent-bg);
+}
+
+.parse-result {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 6px;
+  background: var(--code-bg);
+  font-size: 0.875rem;
+}
+
+.parse-count {
+  margin: 0 0 0.25rem;
+  color: var(--text-h);
+}
+
+.parse-errors {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--text);
+}
+
+.parse-errors li {
+  margin: 0.15rem 0;
+}
+
+/* Sync to YNAB */
+.sync-button {
+  padding: 0.6rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.sync-button:hover:not(:disabled) {
+  filter: brightness(1.05);
+}
+
+.sync-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sync-desc {
+  margin-top: 0.5rem;
+}
+
+/* YNAB account selector */
+.ynab-account-select {
+  margin-bottom: 1rem;
+}
+
+.ynab-account-select .sync-hint {
+  margin-bottom: 0.75rem;
+}
+
+.ynab-row {
+  margin-bottom: 0.75rem;
+}
+
+.ynab-row label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-h);
+  margin-bottom: 0.25rem;
+}
+
+.ynab-row select {
+  width: 100%;
+  max-width: 20rem;
+  padding: 0.5rem 0.6rem;
+  font-size: 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text-h);
+}
+
+.ynab-row-input {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.ynab-row-input select {
+  flex: 1;
+  min-width: 10rem;
+}
+
+.ynab-load-btn {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.ynab-load-btn:hover:not(:disabled) {
+  filter: brightness(1.05);
+}
+
+.ynab-load-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.ynab-error {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  color: #b91c1c;
+}
+
+.ynab-error code {
+  background: rgba(185, 28, 28, 0.1);
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+}
+
+/* Sync status */
+.sync-status {
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.sync-status--syncing {
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+}
+
+.sync-status--success {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  color: var(--text-h);
+}
+
+.sync-status--error {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
+.sync-status p {
+  margin: 0 0 0.5rem;
+}
+
+.sync-status button {
+  margin-top: 0.5rem;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.875rem;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid var(--accent-border);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.sync-errors {
+  margin: 0.25rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.sync-errors li {
+  margin: 0.1rem 0;
+}
