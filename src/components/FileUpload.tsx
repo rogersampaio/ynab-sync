@@ -29,8 +29,6 @@ export function FileUpload({
     if (file) onFile(file);
   };
 
-  const handleClick = () => inputRef.current?.click();
-
   return (
     <section className="file-upload" aria-labelledby="upload-heading">
       <h2 id="upload-heading">Amex file</h2>
@@ -42,7 +40,6 @@ export function FileUpload({
         className="dropzone"
         onDragOver={(e) => e.preventDefault()}
         onDrop={handleDrop}
-        onClick={handleClick}
       >
         <input
           ref={inputRef}
@@ -62,6 +59,7 @@ export function FileUpload({
               className="dropzone-clear"
               onClick={(e) => {
                 e.stopPropagation();
+                if (inputRef.current) inputRef.current.value = "";
                 onClear();
               }}
               aria-label="Clear file"
